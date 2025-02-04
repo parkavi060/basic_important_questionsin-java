@@ -1,0 +1,154 @@
+##finding max and min element in array
+
+
+import java.util.*;
+public class prac {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int arr[]=new int[6];
+        for(int i=0;i<6;i++){
+            arr[i] = scan.nextInt();
+        }
+        int min=arr[0];
+        for(int i=0;i<6;i++){
+            if(arr[i]<min){     //change arr[i]>max to find max element
+                min=arr[i];
+                continue;
+            }
+
+        }
+        System.out.print(min);
+
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+###reverse a string
+
+import java.util.*;
+public class prac {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the size of an array:");
+        int size=scan.nextInt();
+        System.out.println("Enter the array elements:");
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i] = scan.nextInt();
+        }
+        for(int i=arr.length;i>0;i--){
+            System.out.print(arr[i-1]);
+        }
+
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+###move zzeros to last
+
+
+import java.util.*;
+public class prac {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the size of an array:");
+        int size=scan.nextInt();
+        System.out.println("Enter the array elements:");
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i] = scan.nextInt();
+        }
+        int index=0;
+        for(int i=0;i<arr.length;i++ ){
+            if(arr[i]!=0){
+                arr[index++]=arr[i];
+            }
+        }
+        while(index<arr.length){
+            arr[index++]=0;
+        }
+        System.out.println(Arrays.toString(arr));
+
+        } }
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+####find the duplicate elements in array
+
+import java.util.*;
+public class prac {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the size of an array:");
+        int size = scan.nextInt();
+        System.out.println("Enter the array elements:");
+        int arr[] = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = scan.nextInt();
+        }
+        Arrays.sort(arr);
+        System.out.println("The duplicate element is:");
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]==arr[i-1]){
+                System.out.println(arr[i]);
+            }
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+###Merge a two sorted...
+
+import java.util.*;
+
+public class mer {
+    public static void main(String []args){
+        int a[]={1,5,4,2,3};
+        int b[]={9,6,10,7,8};
+        int m[]=new int[a.length+b.length];
+        System.arraycopy(a,0,m,0,a.length);
+        System.arraycopy(b,0,m,a.length,b.length);
+        Arrays.sort(m);
+        System.out.print(Arrays.toString(m));
+
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+####Palindrome of a string
+
+import java.util.Scanner;
+
+public class mer {
+    public static boolean isPalindrome(String str) {
+        str = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase(); // Remove non-alphanumeric characters & convert to lowercase
+        int left = 0, right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        scanner.close();
+
+        if (isPalindrome(input)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
