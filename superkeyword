@@ -1,0 +1,36 @@
+Question:
+
+Create a Java program with a parent class Vehicle that has a constructor initializing the speed variable. Then, create a subclass Car that uses the super keyword to call the parent class constructor and display the speed.
+
+Expected Outcome:
+
+When creating a Car object, it should call the Vehicle constructor using super and print the speed value.
+
+
+class Vehicle{
+    Vehicle(int speed){
+        System.out.println(speed);
+    }
+
+    }
+
+class Car extends Vehicle {
+    Car(int speed) {
+        super(speed);
+
+    }
+
+}
+public class prac {
+    public static void main(String [] args){
+        Car c=new Car(600);
+
+}
+
+}
+
+
+
+
+
+
